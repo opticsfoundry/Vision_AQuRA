@@ -58,5 +58,6 @@ __recovery/
 # Output folders (optional — remove if you want to track them)
 exe/
 !exe/VisionParams.dat
+!Source/*.cfg
 obj/
 .vscode/
