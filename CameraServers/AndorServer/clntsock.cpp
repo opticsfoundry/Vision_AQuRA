@@ -1,0 +1,191 @@
+// clntsock.cpp : implementation of the CClientSocket class
+//
+// This is a part of the Microsoft Foundation Classes C++ library.
+// Copyright (C) 1992-1998 Microsoft Corporation
+// All rights reserved.
+//
+// This source code is only intended as a supplement to the
+// Microsoft Foundation Classes Reference and related
+// electronic documentation provided with the library.
+// See these sources for detailed information regarding the
+// Microsoft Foundation Classes product.
+
+#include "stdafx.h"
+#include "clntsock.h"
+#include "ClientSocketUser.h"
+
+/////////////////////////////////////////////////////////////////////////////
+// CClientSocket Construction
+
+CClientSocket::CClientSocket(CClientSocketUser* pDoc) : CSocket()
+{
+	m_pDoc = pDoc;
+	m_nMsgCount = 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// CClientSocket Operations
+
+void CClientSocket::Init()
+{
+	
+}
+
+void CClientSocket::Abort()
+{
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile)) << "CClientSocket::Abort" << endl;
+}
+
+void CClientSocket::SendString(CString string)
+{
+	unsigned char* buf = new unsigned char[string.GetLength() + 2];
+	buf[0]='*';
+	for (int i=0;i<string.GetLength();i++) {
+		buf[i+1]=string[i];			
+	}		
+	buf[string.GetLength()+1] = '#';
+	SendData(buf,string.GetLength()+2);
+	delete buf;
+}
+
+void CClientSocket::SendData(unsigned char* Data, unsigned long length)
+{
+	unsigned long DataSent = 0;
+	DWORD StartTime = GetTickCount();
+	unsigned long RemainingLength = length;
+	int RequestedLength = 1;
+	do {
+		if (RemainingLength > 16384) RequestedLength = 16384;
+		else RequestedLength = RemainingLength;
+		int SentLength = Send(&(Data[DataSent]), RequestedLength);
+		RemainingLength -= SentLength;
+		DataSent += SentLength;
+	} while ((DataSent < length) && ((GetTickCount() - StartTime) < 3000));
+	if (DataSent < length) {
+		AfxMessageBox("CClientSocket::SendData couldn't send all data");
+	}
+}
+
+void CClientSocket::ReceiveData(unsigned char* Data, unsigned long length)
+{
+	unsigned long DataReceived = 0;
+	DWORD StartTime = GetTickCount();
+	unsigned long RemainingLength = length;
+	int RequestedLength = 1;
+	do {
+		if (RemainingLength > 16384) RequestedLength = 16384;
+		else RequestedLength = RemainingLength;
+		int ReceivedLength=Receive(&(Data[DataReceived]), RequestedLength);
+		RemainingLength -= ReceivedLength;
+		DataReceived += ReceivedLength;
+	} while ((DataReceived < length) && ((GetTickCount()-StartTime)<3000));
+	if (DataReceived < length) {
+		AfxMessageBox("CClientSocket::ReceiveData insufficient data received");
+	}
+}
+
+bool CClientSocket::ReceiveString(CString &string)
+{
+	string="";
+	char in;
+	if (Receive(&in, 1) != 1) {
+//		AfxMessageBox("CClientSocket::ReceiveString nothing to read");
+		return false;
+	}
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile))<<"CClientSocket::ReceiveString "<<in;
+	if (in!='*') {
+		AfxMessageBox("CNetwork::ReceiveMsg :: * expected");		
+		return false;
+	}
+	in='@';
+	DWORD StartTime=GetTickCount();
+	while (/*(m_pArchiveIn->IsBufferEmpty()) &&*/ (in!='#') && (abs((double)(GetTickCount()-StartTime))<5000))  {
+		if (Receive(&in, 1) != 1) {
+			AfxMessageBox("CClientSocket::ReceiveString nothing to read 2");
+			return false;
+		}
+		if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile))<<in;
+		if (in!='#') string+=in;
+	}
+	if (in!='#') {
+		AfxMessageBox("CClientSocket::ReceiveString :: # expected");			
+		return false;
+	}
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile))<<endl;
+	return true;
+}
+
+
+void CClientSocket::CheckIfMessageArrived()
+{
+	//ProcessAuxQueue();
+	//PumpMessages(0);
+	//if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile)) << "CClientSocket::CheckIfMessageArrived " << IsBlocking() << endl;
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile)) << "CClientSocket::CheckIfMessageArrived called" << endl;
+	m_pDoc->ProcessPendingRead(this);
+}
+
+/////////////////////////////////////////////////////////////////////////////
+// CClientSocket Overridable callbacks
+
+void CClientSocket::OnReceive(int nErrorCode)
+{
+	CSocket::OnReceive(nErrorCode);
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile))<<"CClientSocket::OnReceive "<<nErrorCode<<endl;
+	m_pDoc->ProcessPendingRead(this);
+}
+
+void CClientSocket::OnClose(int nErrorCode) {
+	CSocket::OnClose(nErrorCode);
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile)) << "CClientSocket::OnClose " << nErrorCode << endl;
+}
+
+void CClientSocket::OnAccept(int nErrorCode) {
+	CSocket::OnAccept(nErrorCode);
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile)) << "CClientSocket::OnAccept " << nErrorCode << endl;
+}
+
+void CClientSocket::OnConnect(int nErrorCode) {
+	CSocket::OnConnect(nErrorCode);
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile)) << "CClientSocket::OnConnect " << nErrorCode << endl;
+}
+
+void CClientSocket::OnOutOfBandData(int nErrorCode) {
+	CSocket::OnOutOfBandData(nErrorCode);
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile)) << "CClientSocket::OnOutOfBandData " << nErrorCode << endl;
+}
+
+void CClientSocket::OnSend(int nErrorCode) {
+	CSocket::OnSend(nErrorCode);
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile)) << "CClientSocket::OnSend " << nErrorCode << endl;
+}
+
+BOOL CClientSocket::OnMessagePending() {
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile)) << "CClientSocket::OnMessagePending" << endl;
+	m_pDoc->ProcessPendingRead(this);
+	return CSocket::OnMessagePending();
+}
+
+
+/////////////////////////////////////////////////////////////////////////////
+// CSocket Implementation
+
+CClientSocket::~CClientSocket()
+{
+	if (m_pDoc->DebugFile) (*(m_pDoc->DebugFile)) << "CClientSocket::~CClientSocket" << endl;
+
+}
+
+#ifdef _DEBUG
+void CClientSocket::AssertValid() const
+{
+	CSocket::AssertValid();
+}
+
+void CClientSocket::Dump(CDumpContext& dc) const
+{
+	CSocket::Dump(dc);
+}
+#endif //_DEBUG
+
+IMPLEMENT_DYNAMIC(CClientSocket, CSocket)

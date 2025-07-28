@@ -1,0 +1,950 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Andor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ATOMMATH.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BMP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BUTONBOX.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="butonboxold.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="COLORTAB.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="comm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug_new.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="densprof.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DOPT.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Doptold.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FITMATH.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FormatStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="framegbr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="heapcheck.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="leakdetect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LeakTracer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MEASURE.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MessPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NAMES.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="netandor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="network.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="params.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="paramschgd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PICLIST.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PICTURE.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pictureh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="picturew.alt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PICTUREW.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="probelibrary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PROFIL.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="profilalt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RDSETUP.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SCALE.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="serial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="serial16.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="serial32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SerialNet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="setup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TEXTBOX.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TGA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="version.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VISION.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Visiondg.alt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VISIONDG.CPP">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="visionvceditor\stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="visionvceditor\VisionVCEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Vision.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="index.html" />
+    <None Include="vision.html" />
+    <None Include="visionvceditor\debug\BuildLog.htm" />
+    <None Include="visionvceditor\release\BuildLog.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Andor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Atmcd32d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="atmcd32dpf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ATOMMATH.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BMP.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BUTONBOX.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="COLORTAB.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="comm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CONST.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="debug_new.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="densprof.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DOPT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fast_mutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FITMATH.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FormatStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Framegbr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="h.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="leakdetect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MEASURE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Measureold.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MessPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NAMES.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="netandor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="network.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="params.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PICLIST.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PICTURE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PICTUREW.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProbeLibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PROFIL.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RDSETUP.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SCALE.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="serial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="serial16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="serial32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SerialNet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="setup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="static_assert.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TEXTBOX.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TGA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VISIONDG.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WINDECL.H">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\animctrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\appdict.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\applicat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\bardescr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\bitmapga.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\bitset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\btntextg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\buttonga.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\celarray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\checkbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\checklst.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\chooseco.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\choosefo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\clipboar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\clipview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\cmdline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\colmnhdr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\combobex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\combobox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\commctrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\commdial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\commview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\compat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\configfl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\contain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\controlb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\controlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\coolbar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\datetime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\dc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\decframe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\decmdifr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\dialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\dibitmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\dispatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\docking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\docmanag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\doctpl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\docview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\draglist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\drawitem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\edit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\editfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\editsear.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\editview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\eventhan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\exbase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\except.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\filedoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\filename.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\findrepl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\fixedpnt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\flatctrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\floatfra.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\framewin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\fscroll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\gadget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\gadgetwi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\gauge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\gdibase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\gdiobjec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\gdiplus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\glyphbtn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\groupbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\hlpmanag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\hotkey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\imagelst.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\inputdia.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\ipaddres.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\layoutco.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\layoutwi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\lclstrng.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\listbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\listboxview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\listview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\listwind.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\mailer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\mci.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\mdi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\mdichild.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\memcbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\menugadg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\messageb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\metafile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\modegad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\module.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\monthcal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\notetab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\objstrm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\ocfevent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\oledialg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\oledoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\olefacto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\oleframe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\olemdifr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\oleview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\olewindo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\opensave.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\owlall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\owlcore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\owldefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\owlpch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\owlvcl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\pager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\panespli.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\picker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\picklist.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\pictwind.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\popupgad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\posclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\preclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\preview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\prevwin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\printdia.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\printer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\profile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\progressbar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\property.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\propsht.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\psview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\radiobut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\rcntfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\registry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\richedit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\richedpr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\rolldial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\scrollba.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\scroller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\serialze.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\shddel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\shellitm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\shelwapi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\signatur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\slider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\splashwi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\splitter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\static.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\statusba.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\stgdoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\tabctrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\template.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\textgadg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\thread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\timegadg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\tinycapt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\toolbox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\tooltip.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\trayicon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\treeviewctrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\treewind.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\treewn16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\uihandle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\uihelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\updown.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\urllink.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\validate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\vbxctl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\windowev.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\wing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\winsock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\wskaddr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\wskerr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\wskhostm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\wskservm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\wsksock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\wsksockd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\wsksockm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\wsyscls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="owl\wsysinc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="visionvceditor\Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="visionvceditor\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="visionvceditor\VisionVCEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="vision.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="new folder\vision.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\colmnhdr.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\docview.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\editfile.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\editsear.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\editview.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\except.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\glyphbtn.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\hlpmanag.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\inputdia.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\listboxview.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\listview.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\mdi.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\oleview.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\owlapp.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\panespli.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\picklist.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\prevwin.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\printer.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\propsht.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\rcntfile.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\richedv.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\slider.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\statusba.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\urllink.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\validate.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="owl\winsock.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="visionvceditor\VisionVCEditor.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

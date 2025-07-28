@@ -1,0 +1,40 @@
+Error report:
+
+Error 1:
+8.3.2006 19:24
+image taking interrupted with Network : CheckReady error
+Camera 1 does not display an error message when Vision is canceled,
+all other cameras do
+
+Error 2:
+8.3.2006 19:24
+Image numbering does not exceed beyond 1000
+
+Error 3:
+8.3.2006 21:27
+CNetwork:CheckReady:timeout
+Status on the four camera computers:
+143: Parameters, Image, SendData and <<Ready,>>Ready,<<Ready,>>Ready seems ok
+144: Parameters, but no Image command received this is not ok
+145: Parameters, Image >>Ready seems ok
+146: Parameters, Image >>Ready seems ok
+i was one at this piece of code in CVisionDlg:TakeAbsImage
+ for (int i=0;i<NrNetAndorCameras;i++) {
+            if (NetAndorFrameGrabber[i]->CameraUsed) {
+              NetAndorFrameGrabber[i]->CheckReady(100000);
+              NetAndorFrameGrabber[i]->TransferPictureData();
+            }
+          }
+-> Image command got lost
+
+Error 4:
+8.3. 23:45
+as before, but i=3
+
+Error 5:
+11.3. 14:21
+as before, i=3
+a lot of bad data flush before falty image
+saved as NetAndorDebug3Error5.dat
+
+

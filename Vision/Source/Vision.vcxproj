@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <Keyword>MakeFileProj</Keyword>
+    <ProjectGuid>{D825E2B4-C738-2A3C-3438-7CE4CEA5EC0F}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>C:\OWLNext\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\OWLNext\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Andor.cpp" />
+    <ClCompile Include="ATOMMATH.CPP" />
+    <ClCompile Include="BMP.cpp" />
+    <ClCompile Include="BUTONBOX.CPP" />
+    <ClCompile Include="butonboxold.cpp" />
+    <ClCompile Include="COLORTAB.CPP" />
+    <ClCompile Include="comm.cpp" />
+    <ClCompile Include="debug_new.cpp" />
+    <ClCompile Include="densprof.CPP" />
+    <ClCompile Include="DOPT.CPP" />
+    <ClCompile Include="Doptold.cpp" />
+    <ClCompile Include="FITMATH.CPP" />
+    <ClCompile Include="FormatStream.cpp" />
+    <ClCompile Include="framegbr.cpp" />
+    <ClCompile Include="heapcheck.cpp" />
+    <ClCompile Include="leakdetect.cpp" />
+    <ClCompile Include="LeakTracer.cpp" />
+    <ClCompile Include="MEASURE.CPP" />
+    <ClCompile Include="MessPoint.cpp" />
+    <ClCompile Include="NAMES.CPP" />
+    <ClCompile Include="netandor.cpp" />
+    <ClCompile Include="network.cpp" />
+    <ClCompile Include="params.cpp" />
+    <ClCompile Include="paramschgd.cpp" />
+    <ClCompile Include="PICLIST.CPP" />
+    <ClCompile Include="PICTURE.CPP" />
+    <ClCompile Include="pictureh.cpp" />
+    <ClCompile Include="picturew.alt.cpp" />
+    <ClCompile Include="PICTUREW.CPP" />
+    <ClCompile Include="point.cpp" />
+    <ClCompile Include="probelibrary.cpp" />
+    <ClCompile Include="PROFIL.CPP" />
+    <ClCompile Include="profilalt.cpp" />
+    <ClCompile Include="RDSETUP.CPP" />
+    <ClCompile Include="SCALE.CPP" />
+    <ClCompile Include="serial.cpp" />
+    <ClCompile Include="serial16.cpp" />
+    <ClCompile Include="serial32.cpp" />
+    <ClCompile Include="SerialNet.cpp" />
+    <ClCompile Include="setup.cpp" />
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="TEXTBOX.CPP" />
+    <ClCompile Include="TGA.cpp" />
+    <ClCompile Include="version.CPP" />
+    <ClCompile Include="VISION.CPP" />
+    <ClCompile Include="Visiondg.alt.cpp" />
+    <ClCompile Include="VISIONDG.CPP" />
+    <ClCompile Include="visionvceditor\stdafx.cpp" />
+    <ClCompile Include="visionvceditor\VisionVCEditor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="index.html" />
+    <None Include="Vision.def" />
+    <None Include="vision.html" />
+    <None Include="visionvceditor\debug\BuildLog.htm" />
+    <None Include="visionvceditor\release\BuildLog.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Andor.h" />
+    <ClInclude Include="Atmcd32d.h" />
+    <ClInclude Include="atmcd32dpf.h" />
+    <ClInclude Include="ATOMMATH.H" />
+    <ClInclude Include="BMP.H" />
+    <ClInclude Include="BUTONBOX.H" />
+    <ClInclude Include="COLORTAB.H" />
+    <ClInclude Include="comm.h" />
+    <ClInclude Include="CONST.H" />
+    <ClInclude Include="debug_new.h" />
+    <ClInclude Include="densprof.h" />
+    <ClInclude Include="DOPT.h" />
+    <ClInclude Include="fast_mutex.h" />
+    <ClInclude Include="FITMATH.H" />
+    <ClInclude Include="FormatStream.h" />
+    <ClInclude Include="Framegbr.h" />
+    <ClInclude Include="h.h" />
+    <ClInclude Include="leakdetect.h" />
+    <ClInclude Include="MEASURE.H" />
+    <ClInclude Include="Measureold.h" />
+    <ClInclude Include="MessPoint.h" />
+    <ClInclude Include="NAMES.H" />
+    <ClInclude Include="netandor.h" />
+    <ClInclude Include="network.h" />
+    <ClInclude Include="owl\animctrl.h" />
+    <ClInclude Include="owl\appdict.h" />
+    <ClInclude Include="owl\applicat.h" />
+    <ClInclude Include="owl\bardescr.h" />
+    <ClInclude Include="owl\bitmapga.h" />
+    <ClInclude Include="owl\bitset.h" />
+    <ClInclude Include="owl\btntextg.h" />
+    <ClInclude Include="owl\button.h" />
+    <ClInclude Include="owl\buttonga.h" />
+    <ClInclude Include="owl\celarray.h" />
+    <ClInclude Include="owl\checkbox.h" />
+    <ClInclude Include="owl\checklst.h" />
+    <ClInclude Include="owl\chooseco.h" />
+    <ClInclude Include="owl\choosefo.h" />
+    <ClInclude Include="owl\clipboar.h" />
+    <ClInclude Include="owl\clipview.h" />
+    <ClInclude Include="owl\cmdline.h" />
+    <ClInclude Include="owl\colmnhdr.h" />
+    <ClInclude Include="owl\color.h" />
+    <ClInclude Include="owl\combobex.h" />
+    <ClInclude Include="owl\combobox.h" />
+    <ClInclude Include="owl\commctrl.h" />
+    <ClInclude Include="owl\commdial.h" />
+    <ClInclude Include="owl\commview.h" />
+    <ClInclude Include="owl\compat.h" />
+    <ClInclude Include="owl\configfl.h" />
+    <ClInclude Include="owl\contain.h" />
+    <ClInclude Include="owl\control.h" />
+    <ClInclude Include="owl\controlb.h" />
+    <ClInclude Include="owl\controlg.h" />
+    <ClInclude Include="owl\coolbar.h" />
+    <ClInclude Include="owl\datetime.h" />
+    <ClInclude Include="owl\dc.h" />
+    <ClInclude Include="owl\decframe.h" />
+    <ClInclude Include="owl\decmdifr.h" />
+    <ClInclude Include="owl\defs.h" />
+    <ClInclude Include="owl\dialog.h" />
+    <ClInclude Include="owl\dibitmap.h" />
+    <ClInclude Include="owl\dispatch.h" />
+    <ClInclude Include="owl\docking.h" />
+    <ClInclude Include="owl\docmanag.h" />
+    <ClInclude Include="owl\doctpl.h" />
+    <ClInclude Include="owl\docview.h" />
+    <ClInclude Include="owl\draglist.h" />
+    <ClInclude Include="owl\drawitem.h" />
+    <ClInclude Include="owl\edit.h" />
+    <ClInclude Include="owl\editfile.h" />
+    <ClInclude Include="owl\editsear.h" />
+    <ClInclude Include="owl\editview.h" />
+    <ClInclude Include="owl\eventhan.h" />
+    <ClInclude Include="owl\exbase.h" />
+    <ClInclude Include="owl\except.h" />
+    <ClInclude Include="owl\filedoc.h" />
+    <ClInclude Include="owl\filename.h" />
+    <ClInclude Include="owl\findrepl.h" />
+    <ClInclude Include="owl\fixedpnt.h" />
+    <ClInclude Include="owl\flatctrl.h" />
+    <ClInclude Include="owl\floatfra.h" />
+    <ClInclude Include="owl\framewin.h" />
+    <ClInclude Include="owl\fscroll.h" />
+    <ClInclude Include="owl\gadget.h" />
+    <ClInclude Include="owl\gadgetwi.h" />
+    <ClInclude Include="owl\gauge.h" />
+    <ClInclude Include="owl\gdibase.h" />
+    <ClInclude Include="owl\gdiobjec.h" />
+    <ClInclude Include="owl\gdiplus.h" />
+    <ClInclude Include="owl\glyphbtn.h" />
+    <ClInclude Include="owl\groupbox.h" />
+    <ClInclude Include="owl\hlpmanag.h" />
+    <ClInclude Include="owl\hotkey.h" />
+    <ClInclude Include="owl\imagelst.h" />
+    <ClInclude Include="owl\inputdia.h" />
+    <ClInclude Include="owl\ipaddres.h" />
+    <ClInclude Include="owl\layoutco.h" />
+    <ClInclude Include="owl\layoutwi.h" />
+    <ClInclude Include="owl\lclstrng.h" />
+    <ClInclude Include="owl\listbox.h" />
+    <ClInclude Include="owl\listboxview.h" />
+    <ClInclude Include="owl\listview.h" />
+    <ClInclude Include="owl\listwind.h" />
+    <ClInclude Include="owl\mailer.h" />
+    <ClInclude Include="owl\mci.h" />
+    <ClInclude Include="owl\mdi.h" />
+    <ClInclude Include="owl\mdichild.h" />
+    <ClInclude Include="owl\memcbox.h" />
+    <ClInclude Include="owl\menu.h" />
+    <ClInclude Include="owl\menugadg.h" />
+    <ClInclude Include="owl\messageb.h" />
+    <ClInclude Include="owl\metafile.h" />
+    <ClInclude Include="owl\modegad.h" />
+    <ClInclude Include="owl\module.h" />
+    <ClInclude Include="owl\monthcal.h" />
+    <ClInclude Include="owl\notetab.h" />
+    <ClInclude Include="owl\objstrm.h" />
+    <ClInclude Include="owl\ocfevent.h" />
+    <ClInclude Include="owl\oledialg.h" />
+    <ClInclude Include="owl\oledoc.h" />
+    <ClInclude Include="owl\olefacto.h" />
+    <ClInclude Include="owl\oleframe.h" />
+    <ClInclude Include="owl\olemdifr.h" />
+    <ClInclude Include="owl\oleview.h" />
+    <ClInclude Include="owl\olewindo.h" />
+    <ClInclude Include="owl\opensave.h" />
+    <ClInclude Include="owl\owlall.h" />
+    <ClInclude Include="owl\owlcore.h" />
+    <ClInclude Include="owl\owldefs.h" />
+    <ClInclude Include="owl\owlpch.h" />
+    <ClInclude Include="owl\owlvcl.h" />
+    <ClInclude Include="owl\pager.h" />
+    <ClInclude Include="owl\panespli.h" />
+    <ClInclude Include="owl\pch.h" />
+    <ClInclude Include="owl\picker.h" />
+    <ClInclude Include="owl\picklist.h" />
+    <ClInclude Include="owl\pictwind.h" />
+    <ClInclude Include="owl\point.h" />
+    <ClInclude Include="owl\popupgad.h" />
+    <ClInclude Include="owl\posclass.h" />
+    <ClInclude Include="owl\preclass.h" />
+    <ClInclude Include="owl\preview.h" />
+    <ClInclude Include="owl\prevwin.h" />
+    <ClInclude Include="owl\printdia.h" />
+    <ClInclude Include="owl\printer.h" />
+    <ClInclude Include="owl\profile.h" />
+    <ClInclude Include="owl\progressbar.h" />
+    <ClInclude Include="owl\property.h" />
+    <ClInclude Include="owl\propsht.h" />
+    <ClInclude Include="owl\psview.h" />
+    <ClInclude Include="owl\radiobut.h" />
+    <ClInclude Include="owl\rcntfile.h" />
+    <ClInclude Include="owl\registry.h" />
+    <ClInclude Include="owl\resource.h" />
+    <ClInclude Include="owl\richedit.h" />
+    <ClInclude Include="owl\richedpr.h" />
+    <ClInclude Include="owl\rolldial.h" />
+    <ClInclude Include="owl\scrollba.h" />
+    <ClInclude Include="owl\scroller.h" />
+    <ClInclude Include="owl\serialze.h" />
+    <ClInclude Include="owl\shddel.h" />
+    <ClInclude Include="owl\shellitm.h" />
+    <ClInclude Include="owl\shelwapi.h" />
+    <ClInclude Include="owl\signatur.h" />
+    <ClInclude Include="owl\slider.h" />
+    <ClInclude Include="owl\splashwi.h" />
+    <ClInclude Include="owl\splitter.h" />
+    <ClInclude Include="owl\static.h" />
+    <ClInclude Include="owl\statusba.h" />
+    <ClInclude Include="owl\stgdoc.h" />
+    <ClInclude Include="owl\string.h" />
+    <ClInclude Include="owl\system.h" />
+    <ClInclude Include="owl\tabctrl.h" />
+    <ClInclude Include="owl\template.h" />
+    <ClInclude Include="owl\textgadg.h" />
+    <ClInclude Include="owl\thread.h" />
+    <ClInclude Include="owl\time.h" />
+    <ClInclude Include="owl\timegadg.h" />
+    <ClInclude Include="owl\tinycapt.h" />
+    <ClInclude Include="owl\toolbox.h" />
+    <ClInclude Include="owl\tooltip.h" />
+    <ClInclude Include="owl\trayicon.h" />
+    <ClInclude Include="owl\treeviewctrl.h" />
+    <ClInclude Include="owl\treewind.h" />
+    <ClInclude Include="owl\treewn16.h" />
+    <ClInclude Include="owl\uihandle.h" />
+    <ClInclude Include="owl\uihelper.h" />
+    <ClInclude Include="owl\updown.h" />
+    <ClInclude Include="owl\urllink.h" />
+    <ClInclude Include="owl\validate.h" />
+    <ClInclude Include="owl\vbxctl.h" />
+    <ClInclude Include="owl\version.h" />
+    <ClInclude Include="owl\window.h" />
+    <ClInclude Include="owl\windowev.h" />
+    <ClInclude Include="owl\wing.h" />
+    <ClInclude Include="owl\winsock.h" />
+    <ClInclude Include="owl\wskaddr.h" />
+    <ClInclude Include="owl\wskerr.h" />
+    <ClInclude Include="owl\wskhostm.h" />
+    <ClInclude Include="owl\wskservm.h" />
+    <ClInclude Include="owl\wsksock.h" />
+    <ClInclude Include="owl\wsksockd.h" />
+    <ClInclude Include="owl\wsksockm.h" />
+    <ClInclude Include="owl\wsyscls.h" />
+    <ClInclude Include="owl\wsysinc.h" />
+    <ClInclude Include="params.h" />
+    <ClInclude Include="PICLIST.H" />
+    <ClInclude Include="PICTURE.H" />
+    <ClInclude Include="PICTUREW.H" />
+    <ClInclude Include="point.h" />
+    <ClInclude Include="ProbeLibrary.h" />
+    <ClInclude Include="PROFIL.H" />
+    <ClInclude Include="RDSETUP.H" />
+    <ClInclude Include="SCALE.H" />
+    <ClInclude Include="serial.h" />
+    <ClInclude Include="serial16.h" />
+    <ClInclude Include="serial32.h" />
+    <ClInclude Include="SerialNet.h" />
+    <ClInclude Include="setup.h" />
+    <ClInclude Include="static_assert.h" />
+    <ClInclude Include="TEXTBOX.H" />
+    <ClInclude Include="TGA.h" />
+    <ClInclude Include="VISIONDG.H" />
+    <ClInclude Include="visionvceditor\Resource.h" />
+    <ClInclude Include="visionvceditor\stdafx.h" />
+    <ClInclude Include="visionvceditor\VisionVCEditor.h" />
+    <ClInclude Include="WINDECL.H" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="new folder\vision.rc" />
+    <ResourceCompile Include="owl\colmnhdr.rc" />
+    <ResourceCompile Include="owl\docview.rc" />
+    <ResourceCompile Include="owl\editfile.rc" />
+    <ResourceCompile Include="owl\editsear.rc" />
+    <ResourceCompile Include="owl\editview.rc" />
+    <ResourceCompile Include="owl\except.rc" />
+    <ResourceCompile Include="owl\glyphbtn.rc" />
+    <ResourceCompile Include="owl\hlpmanag.rc" />
+    <ResourceCompile Include="owl\inputdia.rc" />
+    <ResourceCompile Include="owl\listboxview.rc" />
+    <ResourceCompile Include="owl\listview.rc" />
+    <ResourceCompile Include="owl\mdi.rc" />
+    <ResourceCompile Include="owl\oleview.rc" />
+    <ResourceCompile Include="owl\owlapp.rc" />
+    <ResourceCompile Include="owl\panespli.rc" />
+    <ResourceCompile Include="owl\picklist.rc" />
+    <ResourceCompile Include="owl\prevwin.rc" />
+    <ResourceCompile Include="owl\printer.rc" />
+    <ResourceCompile Include="owl\propsht.rc" />
+    <ResourceCompile Include="owl\rcntfile.rc" />
+    <ResourceCompile Include="owl\richedv.rc" />
+    <ResourceCompile Include="owl\slider.rc" />
+    <ResourceCompile Include="owl\statusba.rc" />
+    <ResourceCompile Include="owl\urllink.rc" />
+    <ResourceCompile Include="owl\validate.rc" />
+    <ResourceCompile Include="owl\winsock.rc" />
+    <ResourceCompile Include="vision.rc" />
+    <ResourceCompile Include="visionvceditor\VisionVCEditor.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

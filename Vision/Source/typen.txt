@@ -1,0 +1,41 @@
+32 bit Typen
+
+Typ	Größe	Wertebereich
+
+unsigned char 	8 Bit	0	bis	 255
+char	8 Bit	-128 	bis	 127
+short int	16 Bit	-32.768 	bis	 32.767
+unsigned int	32 Bit	0 	bis	 4.294.967.295
+int	32 Bit	-2.147.483.648 	bis	 2.147.483.647
+unsigned long 	32 Bit	0 	bis	 4.294.967.295
+enum	16 Bit	-2.147.483.648 	bis	 2.147.483.647
+long	32 Bit	-2.147.483.648 	bis	 2.147.483.647
+float	32 Bit	3,4 x 10-38 	bis	 3,4 x 10+38
+double	64 Bit	1,7 x 10-308 	bis	 1,7 x 10+308
+
+long double	80 Bit	3,4 x 10-4932 	to	 1,1 x 10+4932
+near (Zeiger)	32 Bit		entfällt
+far (Zeiger)	32 Bit		entfällt
+
+Borland C++ 5.0 Programmierhandbuch
+
+16 Bit Typen
+
+Typ	Größe	Wertebereich
+
+unsigned char 	8 Bit	0	bis	 255
+char	8 Bit	-128 	bis	 127
+enum	16 Bit	-32.768 	bis	 32.767
+unsigned int	16 Bit	0 	bis	 65.535
+short int	16 Bit	-32.768 	bis	 32.767
+int	16 Bit	-32.768 	bis	 32.767
+unsigned long 	32 Bit	0 	bis	 4.294.967.295
+long	32 Bit	-2.147.483.648 	bis	 2.147.483.647
+float	32 Bit	3,4 x 10-38 	bis	 3,4 x 10+38
+double	64 Bit	1,7 x 10-308 	bis	 1,7 x 10+308
+long double	80 Bit	3,4 x 10-4932 	bis	 1,1 x 10+4932
+
+near (Zeiger)	16 Bit		entfällt
+far (Zeiger)	32 Bit		entfällt
+
+Borland C++ 5.0 Programmierhandbuch

@@ -1,0 +1,99 @@
+#Visual Studio specific files
+
+# Visual Studio 2022 C++ (.vcxproj) Git Ignore
+
+## Build artifacts
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.lib
+*.exp
+*.app
+*.iobj
+*.ipdb
+*.pdb
+*.ilk
+*.map
+*.log
+*.tlog
+*.bsc
+*.sbr
+*.idb
+
+## Precompiled headers
+*.pch
+
+## Static analysis and profiling
+*.codeanalysis
+*.vsp
+*.vspx
+*.vspscc
+*.vssscc
+*.coverage
+*.clw
+
+## Build configuration files
+*.lastbuildstate
+*.VC.db
+*.VC.VC.opendb
+
+## User-specific settings
+*.user
+*.suo
+*.sdf
+*.cache
+*.dbmdl
+*.ncb
+
+## Solution-related folders
+.vs/
+
+## CMake-related
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+## Crash dumps
+*.dmp
+
+## Backup and temp files
+*.bak
+*.tmp
+*~
+*.swp
+
+## Test output
+TestResults/
+
+## Package management
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+project.lock.json
+
+## Optional – exclude build logs or reports
+*.log
+*.xml
+
+## Optional – exclude local release folders
+Release/
+Debug/
+x64/
+x86/
+
+## VSCode or JetBrains Rider support
+.vscode/
+.idea/
+
+## Optional – ignore generated files but keep structure
+# !*/.gitkeep
+
+
+
+# Output folders (optional — remove if you want to track them)
+Debug/
+ipch/
+Release/

@@ -1,0 +1,53 @@
+stan, i got this of the borland site a while ago...
+
+Steps to resolve table overflow errors:
+
+1) Linker produces error like "Fatal: block overflow for browsercache"
+2) In the current directory ( EXE target directory ) there will now
+be file name TLINK32.INI containing the default sizes of all the
+internal linker tables.
+3) In the INI file, look up the BrowserCache entry and increase it,
+for example, changing it from 0x200 to 0x220.
+4) Now re-link the application.
+5) If you get the same or a similar error again, continue increasing
+the
+appropriate table entry in the INI file and re-linking until the
+error
+is resolved.
+
+IMPORTANT: Memory usage has been tuned with these table sizes.
+It is recommended being very conservative when increasing this value
+to avoid significant degradation in link time. If the default for
+a table is 0x200, try 0x220 first. Keep upping this value until it
+works.
+
+This only works for the 32 bit linker. Both the command line and the
+integrated linker support the .INI file.
+
+LAQ/Diehl wrote:
+>
+> I have not been reading the list for months, so I do not unfortunately know if
+my
+> subject has been discussed recently.
+> While working at a GUI-application, I all of a sudden started receiving
+strange
+> error messages which I cannot explain.
+> The app would be compiled, but at the end of Linking2 there comes a fatal
+error
+> message with the text which reads either 'Block overflow for block
+SymbolCache'
+> or 'general error in c0ntw.asm' or a general error with a number.
+> Neither of the help files contains anything of the stuff.
+>
+--
+Robin Murray
+St Margaret's Bay,
+Nova Scotia,
+Canada.
+robinmurray@c...
+
+
+-
+Send SUBSCRIBE/UNSUBSCRIBE requests to majordomo@n...
+OWL Web: http://www.cs.rpi.edu/~wiseb/owl-list/
+OWL FAQ: ftp://ftp.netlab.cs.rpi.edu/pub/lists/owl-list-faq/drafts/owl_faq.hlp

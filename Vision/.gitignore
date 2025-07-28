@@ -1,0 +1,62 @@
+# Borland C++ 5.02 project - .gitignore
+
+# Project-specific temporary files
+*.obj
+*.tds
+*.~*
+*.bak
+*.dsk
+*.map
+*.il?
+*.pch
+*.gid
+*.aps
+
+# IDE-generated files
+*.dof
+*.dsm
+*.opt
+*.ncb
+*.plg
+*.sbr
+
+# Resource compiler output
+*.res
+
+# Executables
+*.exe
+*.dll
+*.lib
+*.bpl
+*.ocx
+
+# Debug files
+*.tds
+*.lst
+
+# Backup and autosave
+*.~*
+*.bak
+*.old
+*.tmp
+
+# Makefile auto-backups
+*_il.h
+*_il.cpp
+
+# Version control folders (just in case)
+__history/
+__recovery/
+
+# User-specific config files
+*.cfg
+*.cbk
+*.web
+
+
+
+# Output folders (optional — remove if you want to track them)
+exe/
+!exe/VisionParams.dat
+obj/
+.vscode/

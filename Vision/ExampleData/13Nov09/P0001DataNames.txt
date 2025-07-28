@@ -1,0 +1,50 @@
+Data0 = TempController0 = 0
+Data1 = TempController1 = 0
+Data2 = TempController2 = 0
+Data3 = SrOvenFront = 0
+Data4 = SrReservoir = 0
+Data5 = SrOvenBack = 0
+Data6 = TempController6 = 0
+Data7 = TempController7 = 0
+Data8 = TempController8 = 0
+Data9 = TempController9 = 0
+Data10 = LastLoadingTime = 60000
+Data11 = LastEndTime = 2.31195e+006
+Data12 = TimeSinceComputerBoot = 2.31195e+009
+Data13 = FluoOffset = 0
+Data14 = ZSOffset = 0
+Data15 = SrBlueMOTSampleValue = -0.0250244
+Data16 = KeithleyMultimeterData1 = 1342.54
+Data17 = Sr red MOT Fluorescence = -0.0202942
+Data18 = Surveillance Input = 0.000152588
+Data19 = SuK Sr Fiber Intensity = -0.0294495
+Data20 = Fabry Perrot Piezzo Voltage = -0.00289917
+Data21 = Fabry Perrot Photodiode Voltage = -0.0193787
+Data22 = Elevator Position 1 = 1.72745
+Data23 = Elevator Position 2 = 1.72226
+Data24 = ZS Fiber Intensity = -0.018158
+Data25 =  = 0
+Data26 =  = 0
+Data27 =  = 0
+Data28 =  = 0
+Data29 =  = 0
+Data30 =  = 0
+Data31 =  = 0
+Data32 =  = 0
+Data33 =  = 0
+Data34 =  = 0
+Data35 =  = 0
+Data36 =  = 0
+Data37 =  = 0
+Data38 =  = 0
+Data39 =  = 0
+Data40 =  = 0
+Data41 =  = 0
+Data42 =  = 0
+Data43 =  = 0
+Data44 =  = 0
+Data45 =  = 0
+Data46 =  = 0
+Data47 =  = 0
+Data48 =  = 0
+Data49 =  = 0
