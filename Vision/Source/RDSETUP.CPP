@@ -16,8 +16,8 @@ char *RDSetupTextName[RDSetupTextNameNr]={{"DataDirectory"},{"MainDirectory"}};
 
 bool GetCommand(ifstream *in,char *command, char *data) {
   if (in->eof()) return false;
-  char buf[200];
-  in->getline(buf,200);
+  char buf[string_length];
+  in->getline(buf, string_length);
   if (buf[0]=='/') return false; // skip comment lines
   char *sep=strchr(buf,'=');
   if (!sep) return false;
@@ -54,14 +54,14 @@ CRDSetup::CRDSetup() {
 
   ifstream *in=new ifstream(ConfigFileName);
   if (in->fail()) {
-	 char buf[200];
+	 char buf[string_length];
 	 sprintf(buf,"Could not open Configuration File %s",ConfigFileName);
     MessageBox(GetActiveWindow(),buf,"Error!",MB_OK);
     delete in;
 	 return;
   }
-  char command[200];
-  char data[200];
+  char command[string_length];
+  char data[string_length];
   while (!in->eof()) {
     if (GetCommand(in,command,data)) {
        if (strcmp(command,"DataDirectory")==0) {

@@ -7,7 +7,7 @@
 
 #define NetAndorCameraUsed
 
-const char string_length = 300;
+const unsigned int string_length = 300;
 
 extern const bool MatroxCameraExtern;
 extern unsigned short MatroxCameraPort;

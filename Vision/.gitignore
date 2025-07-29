@@ -61,3 +61,5 @@ exe/
 !Source/*.cfg
 obj/
 .vscode/
+!exe/.gitkeep
+!obj/.gitkeep
