@@ -81,7 +81,7 @@ int loops=0;
   int magcenterwidth=width-magwidth/2;
   //error here 4 times
   try {
-	  hbitmap2= new unsigned long[height*width];
+	  hbitmap2= new unsigned long[(height+1)*(width+1)+8]; //FS 2025 07 31 added +1 and +8 to avoid access violation
      #if defined(DetectLeaks)
        LeakDetect.New(hbitmap2,2,1);
      #endif
@@ -231,7 +231,7 @@ void CPicture::InitBitmap(int axh,int ayh,long value) {
 		  if (bitmap!=NULL) delete[] bitmap;
 		  //very often error here
    	  try {
-			  bitmap = new long[xh*yh];
+			  bitmap = new long[(xh+1)*(yh+1)+8]; //FS 2025 07 31 added +1 and +8 to avoid access violation
            #if defined(DetectLeaks)
   	          LeakDetect.New(bitmap,2,3);
            #endif  
@@ -312,7 +312,7 @@ void CPicture::GetProfil(long * &profilbuf,double pos,double &aEichH,
     if (lengthx>xh) Offset=length*(double(xh)/double(lengthx))*0.5;
     else Offset=length*0.5;
     try {
-		 profilbuf=new long[lengthx];
+		 profilbuf=new long[lengthx+8]; //FS 2025 07 31 added some length to avoid access violation
        #if defined(DetectLeaks)
          LeakDetect.New(profilbuf,2,4);
        #endif  
@@ -345,7 +345,7 @@ void CPicture::GetProfil(long * &profilbuf,double pos,double &aEichH,
     if (lengthy>yh) Offset=length*(1-(double(yh)/double(lengthy))*0.5);
     else Offset=length*0.5;
     try {
-		 profilbuf=new long[lengthy];
+		 profilbuf=new long[lengthy+8]; //FS 2025 07 31 added some length to avoid access violation
        #if defined(DetectLeaks)
          LeakDetect.New(profilbuf,2,5);
        #endif
@@ -475,11 +475,11 @@ void CPicture::GetSum(long * &profilbuf,double pos1, double pos2,double &aEichH,
     else Offset=length*0.5;
     double * hbuf;
     try {
-		 profilbuf=new long[lengthx];
+		 profilbuf=new long[lengthx+8]; //FS 2025 07 31 added some length to avoid access violation
        #if defined(DetectLeaks)
          LeakDetect.New(profilbuf,2,8);
        #endif
-       hbuf=new double[lengthx];
+       hbuf=new double[lengthx+8]; //FS 2025 07 31 added some length to avoid access violation
        #if defined(DetectLeaks)
          LeakDetect.New(hbuf,2,9);
        #endif  
@@ -528,11 +528,11 @@ void CPicture::GetSum(long * &profilbuf,double pos1, double pos2,double &aEichH,
     else Offset=length*0.5;
     double * hbuf;
     try {
-		 profilbuf=new long[lengthy];
+		 profilbuf=new long[lengthy+8]; //FS 2025 07 31 added some length to avoid access violation
        #if defined(DetectLeaks)
    		 LeakDetect.New(profilbuf,2,10);
        #endif  
-		 hbuf=new double[lengthy];
+		 hbuf=new double[lengthy+8];  //FS 2025 07 31 added some length to avoid access violation
        #if defined(DetectLeaks)
          LeakDetect.New(hbuf,2,11);
        #endif  
@@ -863,7 +863,7 @@ int CPicture::Load(const char* name) {
 void CPicture::TurnPicture() {
 	long *helpbitmap;
    try {
-	   helpbitmap = new long[xh*yh];
+	   helpbitmap = new long[(xh+1)*(yh+1)+8]; //FS 2025 07 31 added +1 and +8 to avoid access violation
       #if defined(DetectLeaks)
         LeakDetect.New(helpbitmap,2,13);
       #endif  
