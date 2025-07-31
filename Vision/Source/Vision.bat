@@ -1,2 +1,2 @@
-C:\AQuRA\Vision\exe\vision.exe
-C:\AQuRA\Vision\Source\vision.bat
+C:\AQuRA\Vision_AQuRA\Vision\exe\vision.exe
+C:\AQuRA\Vision_AQuRA\Vision\Source\vision.bat

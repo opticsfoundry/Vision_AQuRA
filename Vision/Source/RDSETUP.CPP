@@ -155,6 +155,7 @@ CRDSetup::CRDSetup() {
       else if (strcmp(command,"TestCameraWidth")==0) TestCameraWidth=atoi(data);
       else if (strcmp(command,"TestCameraHeight")==0) TestCameraHeight=atoi(data);
       else if (strcmp(command,"TestCameraExternalTrigger")==0) TestCameraExternalTrigger=(strcmp(data,"true")==0);
+      else if (strcmp(command,"DebugControlComm")==0) DebugControlComm=(strcmp(data,"true")==0);
 
        //else if (strcmp(command,"NrCameras")==0) NrNetAndorCameras=atoi(data);
        else {

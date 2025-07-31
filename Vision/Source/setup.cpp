@@ -116,6 +116,7 @@ int NrCameraButtons = 6;
    unsigned int TestCameraWidth = 1024;
    unsigned int TestCameraHeight =1024;
   bool TestCameraExternalTrigger=false;
+  bool DebugControlComm = false;
 
 int filmtime=500;
 int testserialtime=50;

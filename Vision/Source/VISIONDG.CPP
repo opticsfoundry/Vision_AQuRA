@@ -574,7 +574,7 @@ TVisionDialog::TVisionDialog(TMessageBar *amb, bool HardwareAccessAllowed)
 		if (ControlComputerSerial) serial=new CSerial();
       else {
       	serial=new CSerialNet(this,ControlComputerPort,amb,&CloseVisionFlag);
-         //serial->DebugOn("DebugControlComm.dat",false);  //comment out in mormal use
+         if (DebugControlComm) serial->DebugOn("DebugControlComm.dat",false);  //comment out in mormal use
       }
       #if defined(DetectLeaks)
         LeakDetect.New(serial,5,13);
@@ -5558,13 +5558,13 @@ void TVisionDialog::SynchroniseParameters() {
   int NoNameNr=0;
   while (strcmp(name,"VisionSynchronizeParametersEnd")!=0) {
 
-
+/*
 //debug
   ofstream out("Visionde.dat", ios::app);
   out<<name<<endl;
    out.close();
 //debug end
-
+  */
     Type=name[0];
     strcpy(name,name+1);
     if (strchr(name,'=')!=NULL) {
@@ -5586,18 +5586,19 @@ void TVisionDialog::SynchroniseParameters() {
       }
     } else {
       ParamList=new CParamList(NULL,name,Value,Type);
-      #if defined(DetectLeaks)                
+      #if defined(DetectLeaks)
         LeakDetect.New(ParamList,5,103);
       #endif
     }
 
     serial->GetString(name);
   }
+  /*
   //debug
   ofstream out("Visionde.dat", ios::app);
   out<<" finished" <<endl;
    out.close();
-//debug end
+//debug end */
   serial->SendCommand("*Ready#");
 }
 

@@ -49,8 +49,8 @@ int CComm::GetBool(bool &d) {
   return (GetTickCount()-timeout>=30000);
 }
 
-int CComm::GetString(char *c) {
-  char Command[10000];
+int CComm::GetString(char *Command) {
+  //char Command[10000];
   DWORD timeout=GetTickCount();
   while ((!GetCommand(Command)) && (GetTickCount()-timeout<30000)) Sleep(10);
   return (GetTickCount()-timeout>=30000);

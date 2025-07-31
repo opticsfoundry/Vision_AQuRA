@@ -170,7 +170,7 @@ def get_camera_img(camera, NumberPictures):
      return:
      image
      '''
-
+    print(f"Trying to take {int(NumberPictures)} images")
     try:
         camera.StartGrabbingMax(int(NumberPictures))
         images = []
@@ -206,14 +206,14 @@ def start_camera(nr_camera, Exposure_Time, set_Gain, width, height, trigger_Mode
         # allocated for grabbing. The default value of this parameter is 10.
         print("Using device:", camera.GetDeviceInfo().GetModelName())
         print("Serial Number:", camera.GetDeviceInfo().GetSerialNumber())
-        camera.ExposureTimeAbs.SetValue(int(Exposure_Time*1e3))
-        print("Exposure time:", camera.ExposureTimeAbs.GetValue()/1e3, "ms")
-        camera.AcquisitionFrameRateAbs.SetValue(int(50))
+        camera.ExposureTime.SetValue(int(Exposure_Time*1e3))
+        print("Exposure time:", camera.ExposureTime.GetValue()/1e3, "ms")
+        camera.AcquisitionFrameRate.SetValue(int(50))
         #set frame rate set constant to max
-        print("Frame rate:", camera.AcquisitionFrameRateAbs.GetValue(), "fps")
+        print("Frame rate:", camera.AcquisitionFrameRate.GetValue(), "fps")
         camera.GainAuto.SetValue('Off')
-        camera.GainRaw.SetValue(int(set_Gain))
-        print("Gain setting:", camera.GainRaw.GetValue(), "dB \nAuto Gain:", camera.GainAuto.GetValue())
+        camera.Gain.SetValue(int(set_Gain))
+        print("Gain setting:", camera.Gain.GetValue(), "dB \nAuto Gain:", camera.GainAuto.GetValue())
         camera.Width.Value = int(width)
         print("Image width:", camera.Width.GetValue(), "pixel")
         camera.Height.Value = int(height)
@@ -368,8 +368,8 @@ if __name__ == "__main__":
     # Map cameras to desired ports
     # adjust range or mapping as needed:
     camera_ports = {
-        25055811: 713, #serial number: 25055811: IP port for Vision: 713
-        25008526: 714  #serial number: 25008526: IP port for Vision: 714
+        40325878: 713 #, #serial number: 25055811: IP port for Vision: 713
+        #25008526: 714  #serial number: 25008526: IP port for Vision: 714
         #24972368: 715,
         #25008525: 716,       
     }
