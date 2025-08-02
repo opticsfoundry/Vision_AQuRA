@@ -21,6 +21,8 @@ CNetwork::CNetwork(TWindow *aparent,char *aIPAdresse, ushort aport, bool aOpenAs
   networkdata=false;
   strcpy(IPAdresse,aIPAdresse);
   port=aport;
+  myStreamSocket=NULL;
+  myListeningSocket=NULL;
   Open();
   SyncMode=false;
 
@@ -78,36 +80,42 @@ void CNetwork::Open() {
   if (OpenAsServer) {
     TINetSocketAddress ourSocketAddress(0, INADDR_ANY);  //same as 'ourSocketAddress()'
     myPresentState = nIdle;
-    myStreamSocket = new TStreamSocket(ourSocketAddress);
+    myListeningSocket = new TStreamSocket(ourSocketAddress);
     #if defined(DetectLeaks)
-      LeakDetect.New(myStreamSocket,1,2);
+      LeakDetect.New(myListeningSocket,1,2);
     #endif
-    myStreamSocket->SetNotificationWindow(this); //redirect socket FD_XXX notifications to us.
-    nError = myStreamSocket->CreateSocket(); //similar to 'socket()'
+    myListeningSocket->SetNotificationWindow(this); //redirect socket FD_XXX notifications to us.
+    nError = myListeningSocket->CreateSocket(); //similar to 'socket()'
     if (nError == WINSOCK_ERROR){ //could also say 'if (nError){'
-      MessageBox(TSocketError(myStreamSocket->GetLastError()).GetReasonString(),"Error on CreateSocket()",  MB_OK);
+      MessageBox(TSocketError(myListeningSocket->GetLastError()).GetReasonString(),"Error on CreateSocket()",  MB_OK);
       return;
     }
-    myStreamSocket->StartAcceptNotification();  //similar to 'WSAAsyncSelect()'
-    myStreamSocket->SetNotificationWindow(this); //redirect socket FD_XXX notifications to us.
+    myListeningSocket->SetNotificationWindow(this); //redirect socket FD_XXX notifications to us.
+    
     ushort nPort = TWinSock::Dll()->htons(port);
-    nError = myStreamSocket->SetReuseAddressOption(true);
+    nError = myListeningSocket->SetReuseAddressOption(true);
     if (nError == WINSOCK_ERROR){ //could also say 'if (nError){'
-      MessageBox(TSocketError(myStreamSocket->GetLastError()).GetReasonString(),"Error on SetReuseAddressOption()",  MB_OK);
+      MessageBox(TSocketError(myListeningSocket->GetLastError()).GetReasonString(),"Error on SetReuseAddressOption()",  MB_OK);
       return;
     }
-    nError = myStreamSocket->BindSocket(TINetSocketAddress(nPort, INADDR_ANY)); //similar to 'bind()'
+    nError = myListeningSocket->BindSocket(TINetSocketAddress(nPort, INADDR_ANY)); //similar to 'bind()'
     if (nError == WINSOCK_ERROR){ //could also say 'if (nError){'
-      MessageBox(TSocketError(myStreamSocket->GetLastError()).GetReasonString(),"Error on BindSocket()", MB_OK);
+      MessageBox(TSocketError(myListeningSocket->GetLastError()).GetReasonString(),"Error on BindSocket()", MB_OK);
       return;
     }
-    nError = myStreamSocket->Listen();
+    nError = myListeningSocket->Listen();
     if (nError == WINSOCK_ERROR){ //could also say 'if (nError){'
-      MessageBox(TSocketError(myStreamSocket->GetLastError()).GetReasonString(),"Error on Listen()",  MB_OK);
+      MessageBox(TSocketError(myListeningSocket->GetLastError()).GetReasonString(),"Error on Listen()",  MB_OK);
+      return;
+    }
+    nError = myListeningSocket->StartAcceptNotification();  //  must come last
+    if (nError == WINSOCK_ERROR) {
+      MessageBox(TSocketError(myListeningSocket->GetLastError()).GetReasonString(),"Error on StartAcceptNotification()",  MB_OK);
       return;
     }
     myPresentState=nListening;
     if (mb) mb->SetText("Listening");
+    if (DebugFile) (*DebugFile) << "Listening socket setup done" << endl;
   } else {
     myPresentState = nIdle;
     TINetSocketAddress ourSocketAddress; //same as INetSocketAddress(0, INADDR_ANY);
@@ -138,11 +146,26 @@ void CNetwork::Open() {
 
 CNetwork::~CNetwork() {
   if (DebugFile) DebugOff();
-  myStreamSocket->CloseSocket();
+  if (myStreamSocket) {
+  
   #if defined(DetectLeaks)
     LeakDetect.Delete(myStreamSocket);
   #endif
-  delete myStreamSocket;
+
+    myStreamSocket->CloseSocket();
+    delete myStreamSocket;
+    myStreamSocket = NULL;
+  }
+
+  if (myListeningSocket) {  
+  #if defined(DetectLeaks)
+    LeakDetect.Delete(myListeningSocket);
+  #endif
+
+    myListeningSocket->CloseSocket();
+    delete myListeningSocket;
+    myListeningSocket = NULL;
+  }
 }
 
 void CNetwork::Connect()
@@ -191,16 +214,21 @@ LRESULT CNetwork::DoSocketNotification(WPARAM, LPARAM lParam)
         TStreamSocket newStreamSocket;  //construct an empty StreamSocket object.
         newStreamSocket.SetSaveSocketOnDelete();  //Don't close the socket on deletion, b/c we're giving it to someone else.
 
-        int nError = myStreamSocket->Accept(newStreamSocket); //Accept() will completely fix up nStreamSocket.
+        int nError = myListeningSocket->Accept(newStreamSocket); //Accept() will completely fix up nStreamSocket.
         if (nError == WINSOCK_ERROR){ //could also say: 'if (nError){'
-          MessageBox(TSocketError(myStreamSocket->GetLastError()).GetReasonString(),"Error on Accept().",  MB_OK);
+          MessageBox(TSocketError(myListeningSocket->GetLastError()).GetReasonString(),"Error on Accept().",  MB_OK);
           return 0;
         }
         myPresentState=nIdle;
 
         char  szPort[12];
 
-        *myStreamSocket = newStreamSocket; //StreamSocket::operator=()
+        if (myStreamSocket) {
+          myStreamSocket->CloseSocket();
+          delete myStreamSocket;
+        }
+        myStreamSocket = new TStreamSocket();
+        *myStreamSocket = newStreamSocket;
         myStreamSocket->SetSaveSocketOnDelete(FALSE); //Now we own the socket descriptor.
         sAddressToConnectTo = newStreamSocket.PeerSocketAddress;
 
@@ -263,8 +291,8 @@ LRESULT CNetwork::DoSocketNotification(WPARAM, LPARAM lParam)
           if (nError == WINSOCK_ERROR){
             MessageBox(TSocketError(myStreamSocket->GetLastError()).GetReasonString(),"Error on CloseSocket()",  MB_OK);
           } */
-          MessageBox("CNetwork::DoSocketNotification : Connection closed by client, closing Vision.", "Error", MB_OK);
-          if (CloseVisionFlag) *CloseVisionFlag=true;
+          //MessageBox("CNetwork::DoSocketNotification : Connection closed by client, closing Vision.", "Error", MB_OK);
+          //if (CloseVisionFlag) *CloseVisionFlag=true;
           if (DebugFile) DebugOff();
 			 myStreamSocket->CloseSocket();
 
@@ -272,11 +300,12 @@ LRESULT CNetwork::DoSocketNotification(WPARAM, LPARAM lParam)
             LeakDetect.Delete(myStreamSocket);
           #endif
           delete myStreamSocket;
+          myStreamSocket = NULL;
           networkdata=false;
-          Open();
+          //Open();
           SyncMode=false;
 
-           nError = myStreamSocket->Listen();
+          /*nError = myStreamSocket->Listen();
            if (nError == WINSOCK_ERROR){ //could also say 'if (nError){'
        	     MessageBox(TSocketError(myStreamSocket->GetLastError()).GetReasonString(),"Error on Listen()",  MB_OK);
            }
@@ -288,7 +317,7 @@ LRESULT CNetwork::DoSocketNotification(WPARAM, LPARAM lParam)
        	  }
      		  myStreamSocket->SetNotificationWindow(this); //redirect socket FD_XXX notifications to us.
 			  ushort nPort = TWinSock::Dll()->htons(port);
-			  nError = myStreamSocket->SetReuseAddressOption(true);
+			  nError = myStreamSocket->SetReuseAddressOption(true);*/
           
           myPresentState=nListening;
           if (mb) mb->SetText("Connection lost. Listening...");
@@ -664,7 +693,8 @@ bool CNetwork::ReadHugeData(char *data, long& alength,long timeout) {
 }
 
 bool CNetwork::DataAvailable() {
-  return myStreamSocket->GetTotalWaitingSize()>0;
+if (myStreamSocket) return myStreamSocket->GetTotalWaitingSize()>0;
+else return 0;
 }
 
 void CNetwork::Flush(long time) {

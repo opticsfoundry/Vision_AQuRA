@@ -26,6 +26,7 @@ class CNetwork : public TWindow
    TWindow *parent;
 
     enum          nState{nIdle, nListening, nWaitingForAddress, nConnecting, nConnected,nConnectionLost} myPresentState;
+    TStreamSocket* myListeningSocket;
     TStreamSocket* myStreamSocket;
     bool IsServer;
     bool AppendCRLFToCommand;
