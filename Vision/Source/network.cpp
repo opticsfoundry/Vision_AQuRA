@@ -263,7 +263,7 @@ LRESULT CNetwork::DoSocketNotification(WPARAM, LPARAM lParam)
           if (nError == WINSOCK_ERROR){
             MessageBox(TSocketError(myStreamSocket->GetLastError()).GetReasonString(),"Error on CloseSocket()",  MB_OK);
           } */
-
+          MessageBox("CNetwork::DoSocketNotification : Connection closed by client, closing Vision.", "Error", MB_OK);
           if (CloseVisionFlag) *CloseVisionFlag=true;
           if (DebugFile) DebugOff();
 			 myStreamSocket->CloseSocket();
