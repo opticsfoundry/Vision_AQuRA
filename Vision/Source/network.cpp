@@ -208,6 +208,7 @@ LRESULT CNetwork::DoSocketNotification(WPARAM, LPARAM lParam)
   if (myPresentState==nListening) {
     if (nEvent == FD_ACCEPT) {
       if (mb) mb->SetText("Accepting connection");
+      
       if (nError)
         MessageBox(TSocketError(nError).GetReasonString(),"Error on receipt of FD_ACCEPT.",  MB_OK);
       else {
@@ -256,6 +257,10 @@ LRESULT CNetwork::DoSocketNotification(WPARAM, LPARAM lParam)
         szIPAddress = sAddressToConnectTo.ConvertAddress(sAddressToConnectTo.GetNetworkAddress());
         myPresentState = nConnected;
         //MessageBox("Connected", "Error", MB_OK);
+        if (DebugFile) {
+          (*DebugFile)<<GetTickCount()<<" : Connected."<<endl;
+          DebugFile->flush();
+       }
         return 1;
       }
     } else {
@@ -282,6 +287,7 @@ LRESULT CNetwork::DoSocketNotification(WPARAM, LPARAM lParam)
       } else {
          myPresentState = nConnected;
          if (mb) mb->SetText("Connected to control");
+      
          //MessageBox("Connected2", "Error", MB_OK);
       }
     } else if (nEvent == FD_CLOSE) {
@@ -293,7 +299,7 @@ LRESULT CNetwork::DoSocketNotification(WPARAM, LPARAM lParam)
           } */
           //MessageBox("CNetwork::DoSocketNotification : Connection closed by client, closing Vision.", "Error", MB_OK);
           //if (CloseVisionFlag) *CloseVisionFlag=true;
-          if (DebugFile) DebugOff();
+          //if (DebugFile) DebugOff();
 			 myStreamSocket->CloseSocket();
 
           #if defined(DetectLeaks)
@@ -321,6 +327,10 @@ LRESULT CNetwork::DoSocketNotification(WPARAM, LPARAM lParam)
           
           myPresentState=nListening;
           if (mb) mb->SetText("Connection lost. Listening...");
+          if (DebugFile) {
+             (*DebugFile)<<GetTickCount()<<" : Connection lost. Listening."<<endl;
+              DebugFile->flush();
+          }
         } else {
           myPresentState = nConnectionLost;
         }

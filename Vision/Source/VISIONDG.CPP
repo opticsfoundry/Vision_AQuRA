@@ -435,7 +435,7 @@ TVisionDialog::TVisionDialog(TMessageBar *amb, bool HardwareAccessAllowed)
       #if defined(DetectLeaks)
   		    LeakDetect.New(NetAndorFrameGrabber[i],5,4);
  	   #endif
-      //NetAndorFrameGrabber[i]->DebugOn(false);  //FS 2023 10 18 uncomment this line to obtain a camera server communication protocol
+      if (DebugCameraComm) NetAndorFrameGrabber[i]->DebugOn(false);  //FS 2023 10 18 uncomment this line to obtain a camera server communication protocol
    }
 	#endif
 
