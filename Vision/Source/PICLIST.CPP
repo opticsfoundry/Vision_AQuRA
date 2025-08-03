@@ -62,13 +62,13 @@ void CPictureList::AddPicture(CPicture *picture, const char *name,
       strcpy(buf,strchr(buf,'\\')+1);
     }
     if ((strchr(buf,'.')>0) && strlen(buf)>6) {
-      buf[strlen(buf)-6]=0;
+      buf[strlen(buf)-7]=0;
       strcpy(buf3,buf);
       sprintf(buf,"%s",buf3);//,AtomName,CameraDirection);
       if ((buf2[0]=='S') && (strchr(buf2,'\\')>0)) {
         *strchr(buf2,'\\')=0;
         strcpy(buf3,buf);;
-        sprintf(buf,"%s %s",buf3,buf2);
+        sprintf(buf,"%s%s",buf3,buf2);
       }
       TitleList[AktPicNr]->SetText(buf);
     }
