@@ -54,12 +54,17 @@ CRDSetup::CRDSetup() {
 
   ifstream *in=new ifstream(ConfigFileName);
   if (in->fail()) {
-	 char buf[string_length];
-	 sprintf(buf,"Could not open Configuration File %s",ConfigFileName);
-    MessageBox(GetActiveWindow(),buf,"Error!",MB_OK);
     delete in;
-	 return;
-  }
+	 char buf[string_length];
+   sprintf(buf,"..\\Source\\%s",ConfigFileName);
+    in = new ifstream(buf);
+    if (in->fail()) {
+      sprintf(buf,"Could not open Configuration File %s or ..\\Source\\%s.",ConfigFileName,ConfigFileName);
+        MessageBox(GetActiveWindow(),buf,"Error!",MB_OK);
+        delete in;
+      return;
+      }
+}
   char command[string_length];
   char data[string_length];
   while (!in->eof()) {
