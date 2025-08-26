@@ -1,0 +1,1 @@
+python Server_BaslerCamerasToVision.py
