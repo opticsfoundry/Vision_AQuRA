@@ -1209,7 +1209,8 @@ void TVisionDialog::NetAndorPicture(int CameraUsed) {
 	  profilV->GetPos(posy1,posy2);
      NetAndorFrameGrabber[CameraUsed]->SetImageParameters(
        /*CameraDirection*/"X",/*CameraUsed*/true,/*PictureNumber*/0,/*MainCamera*/1,/*hbin*/ 1,/*vbin*/ 1,/*xstart*/ 0,
-       /*ystart*/0, /*width*/ TestCameraWidth,/*height*/ TestCameraHeight,/*ExposureTime*/ 500,/*Temperature*/ 20,
+       /*ystart*/0, /*width*/ TestCameraWidth,/*height*/ TestCameraHeight,
+       /*ExposureTime*/ TestCameraExposureTime,/*Temperature*/ TestCameraTemperature,
        /*ExternalTrigger*/ (TestCameraExternalTrigger) ? 1 : 0, /*vSpeed*/ 16, /*hSpeed*/ 1, /*FKSMode*/ 0,
        /*FKSHeight*/ 341,/*FKSDataImages*/ 1,/*FKSReferenceImages*/ 1,/*FKSvSpeed*/ 2,
        /*FKSExternalTriggerStart,*/ 1,/*FKSDirtyLines*/ 0, /*NumberPictures*/ 1,/* aPrePicture*/false,

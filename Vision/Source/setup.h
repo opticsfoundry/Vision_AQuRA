@@ -185,6 +185,8 @@ extern int PBy;
 
 extern unsigned int TestCameraWidth;
 extern unsigned int TestCameraHeight;
+extern double TestCameraExposureTime;
+extern double TestCameraTemperature;
 extern bool TestCameraExternalTrigger;
 extern bool DebugControlComm;
 extern bool DebugCameraComm;

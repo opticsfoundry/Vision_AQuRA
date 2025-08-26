@@ -159,6 +159,8 @@ CRDSetup::CRDSetup() {
        else if (strcmp(command,"PictureListColumns")==0) PictureListColumns=atoi(data);
       else if (strcmp(command,"TestCameraWidth")==0) TestCameraWidth=atoi(data);
       else if (strcmp(command,"TestCameraHeight")==0) TestCameraHeight=atoi(data);
+      else if (strcmp(command,"TestCameraExposureTime")==0) TestCameraExposureTime=atof(data);
+      else if (strcmp(command,"TestCameraTemperature")==0) TestCameraTemperature=atof(data);
       else if (strcmp(command,"TestCameraExternalTrigger")==0) TestCameraExternalTrigger=(strcmp(data,"true")==0);
       else if (strcmp(command,"DebugControlComm")==0) DebugControlComm=(strcmp(data,"true")==0);
       else if (strcmp(command,"DebugCameraComm")==0) DebugCameraComm=(strcmp(data,"true")==0);
