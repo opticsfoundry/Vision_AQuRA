@@ -16,6 +16,8 @@ After cloning, open Vision\Vision.ide.
  
 Adjust paths in "Optionen -> Projekt".
 
+![Borland path selector](Manual/Images/BorlandDirectorySettings.png)
+
 Do "Projekt -> Projekt neu compilieren"
  
 If error "can't read resource file", quit Borland and load Vision.ide again, and Do "Projekt -> Projekt neu compilieren" again.
