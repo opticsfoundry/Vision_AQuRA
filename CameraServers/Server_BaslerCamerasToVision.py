@@ -212,7 +212,11 @@ def start_camera(nr_camera, Exposure_Time, set_Gain, width, height, trigger_Mode
         #set frame rate set constant to max
         print("Frame rate:", camera.AcquisitionFrameRate.GetValue(), "fps")
         camera.GainAuto.SetValue('Off')
-        camera.Gain.SetValue(int(set_Gain))
+        gain = int(set_Gain)
+        if int(gain>48):
+            gain=48
+            print("Gain has to be 48 or lower")
+        camera.Gain.SetValue(gain)
         print("Gain setting:", camera.Gain.GetValue(), "dB \nAuto Gain:", camera.GainAuto.GetValue())
         camera.Width.Value = int(width)
         print("Image width:", camera.Width.GetValue(), "pixel")
