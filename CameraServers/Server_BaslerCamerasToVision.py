@@ -196,12 +196,57 @@ def get_camera_img(camera, NumberPictures):
         sys.exit(exitCode)
     return images
 
+def _try_set_feature(camera, feature_name, value):
+    try:
+        feature = getattr(camera, feature_name)
+        feature.SetValue(value)
+        return True
+    except Exception:
+        return False
+
+def _try_execute_feature(camera, feature_name):
+    try:
+        feature = getattr(camera, feature_name)
+        feature.Execute()
+        return True
+    except Exception:
+        return False
+
+def _try_get_feature(camera, feature_name):
+    try:
+        feature = getattr(camera, feature_name)
+        return feature.GetValue()
+    except Exception:
+        return "n/a"
+
+def _reset_camera_geometry_state(camera):
+    # Reset to a predictable geometry state. Some settings are persistent in the camera.
+    _try_set_feature(camera, "UserSetSelector", "Default")
+    _try_execute_feature(camera, "UserSetLoad")
+
+    _try_set_feature(camera, "CenterX", False)
+    _try_set_feature(camera, "CenterY", False)
+
+    _try_set_feature(camera, "BinningHorizontal", 1)
+    _try_set_feature(camera, "BinningVertical", 1)
+    _try_set_feature(camera, "DecimationHorizontal", 1)
+    _try_set_feature(camera, "DecimationVertical", 1)
+
+    # Basler-specific scaling features (node names differ by camera/firmware).
+    _try_set_feature(camera, "BslScalingFactor", 1.0)
+    _try_set_feature(camera, "ScalingHorizontalAbs", 1.0)
+    _try_set_feature(camera, "ScalingVerticalAbs", 1.0)
+
+    _try_set_feature(camera, "OffsetX", 0)
+    _try_set_feature(camera, "OffsetY", 0)
+
 def start_camera(nr_camera, Exposure_Time, set_Gain, width, height, trigger_Mode, cameras, devices, tlFactory):
     try:
         # Create an instant camera object with the camera device found first.
         camera = cameras[int(nr_camera)]
         camera.Attach(tlFactory.CreateDevice(devices[int(nr_camera)]))
         camera.Open()
+        _reset_camera_geometry_state(camera)
         # The parameter MaxNumBuffer can be used to control the count of buffers
         # allocated for grabbing. The default value of this parameter is 10.
         print("Using device:", camera.GetDeviceInfo().GetModelName())
@@ -218,6 +263,9 @@ def start_camera(nr_camera, Exposure_Time, set_Gain, width, height, trigger_Mode
             print("Gain has to be 48 or lower")
         camera.Gain.SetValue(gain)
         print("Gain setting:", camera.Gain.GetValue(), "dB \nAuto Gain:", camera.GainAuto.GetValue())
+        print("Binning HxV:", _try_get_feature(camera, "BinningHorizontal"), "x", _try_get_feature(camera, "BinningVertical"))
+        print("Decimation HxV:", _try_get_feature(camera, "DecimationHorizontal"), "x", _try_get_feature(camera, "DecimationVertical"))
+        print("Scaling factor:", _try_get_feature(camera, "BslScalingFactor"))
         print("Image width max:", camera.Width.GetMax(), "pixel")
         print("Image width initial:", camera.Width.GetValue(), "pixel")
         camera.Width.Value = int(width)
