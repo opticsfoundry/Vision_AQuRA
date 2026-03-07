@@ -372,8 +372,8 @@ if __name__ == "__main__":
     # Map cameras to desired ports
     # adjust range or mapping as needed:
     camera_ports = {
-        40325878: 713 #, #serial number: 25055811: IP port for Vision: 713
-        #25008526: 714  #serial number: 25008526: IP port for Vision: 714
+        40325878: 713, #, #serial number: 25055811: IP port for Vision: 713
+        40609018: 714  #serial number: 25008526: IP port for Vision: 714
         #24972368: 715,
         #25008525: 716,       
     }
