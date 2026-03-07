@@ -218,8 +218,12 @@ def start_camera(nr_camera, Exposure_Time, set_Gain, width, height, trigger_Mode
             print("Gain has to be 48 or lower")
         camera.Gain.SetValue(gain)
         print("Gain setting:", camera.Gain.GetValue(), "dB \nAuto Gain:", camera.GainAuto.GetValue())
+        print("Image width max:", camera.Width.GetMax(), "pixel")
+        print("Image width initial:", camera.Width.GetValue(), "pixel")
         camera.Width.Value = int(width)
         print("Image width:", camera.Width.GetValue(), "pixel")
+        print("Image height max:", camera.Height.GetMax(), "pixel")
+        print("Image height initial:", camera.Height.GetValue(), "pixel")
         camera.Height.Value = int(height)
         print("Image height:", camera.Height.GetValue(), "pixel")
         camera.PixelFormat.Value = "Mono12"
