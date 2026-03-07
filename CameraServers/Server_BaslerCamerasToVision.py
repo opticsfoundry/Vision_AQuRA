@@ -267,11 +267,9 @@ def start_camera(nr_camera, Exposure_Time, set_Gain, width, height, trigger_Mode
         print("Decimation HxV:", _try_get_feature(camera, "DecimationHorizontal"), "x", _try_get_feature(camera, "DecimationVertical"))
         print("Scaling factor:", _try_get_feature(camera, "BslScalingFactor"))
         print("Image width max:", camera.Width.GetMax(), "pixel")
-        print("Image width initial:", camera.Width.GetValue(), "pixel")
         camera.Width.Value = int(width)
         print("Image width:", camera.Width.GetValue(), "pixel")
         print("Image height max:", camera.Height.GetMax(), "pixel")
-        print("Image height initial:", camera.Height.GetValue(), "pixel")
         camera.Height.Value = int(height)
         print("Image height:", camera.Height.GetValue(), "pixel")
         camera.PixelFormat.Value = "Mono12"
